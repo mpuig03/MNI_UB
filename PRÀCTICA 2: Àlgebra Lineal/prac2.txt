@@ -1,0 +1,15 @@
+Marc Puig Creixell
+
+5.1:
+    En el cas de la factorització sense pivotatge, he vist que per el cas que demana l'exercici (epsilon=0 1e-5, tol=1e-12, iter=1e5),
+    en cap cas detectava un error, ja que la precisió de la tolerància era massa fina. En canvi, si mantenint la resta, es posa una 
+    tolerància de 1e-7 o 1e-6, veiem que ja no es pot fer en tots els casos. En la majoria, sí, però no en absolutament tots.
+
+    En el cas de la factorització amb pivotatge, veiem que es pot realitzar en qualsevol cas. El resultat era bastant previsible, donat
+    que l'unica raó per la qual no es podria factoritzar amb pivotatge seria que l'element de la diagonal en cada operació fos molt proper
+    a 0, fet que s'intenta evitar usant precisament aquest mètode.
+
+5.2: 
+    Es pot veure que el nombre de condició va augmentant segons augmenta la n, tot i que creix mes lentament quan s'utilitza pivotatge. 
+    De fet, com al apartat anterior, era un resultat previsible, ja que en el fons el nombre de condició és proporcional a la propagació
+    de l'error i el pivotatge per columnes és un mètode que ajuda a minimitzar la propagació d'error.
