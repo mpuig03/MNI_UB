@@ -1,0 +1,29 @@
+Marc Puig Creixell
+
+1. 
+
+a)
+El programa s'aturarà, ja que la precisió del tipus de variable float no acceptarà precissions molt petites i a partir de cert punt, l'invers de nombres molt grans l'interpretarà com a 0 i per tant, s'aturarà la suma.
+
+El programa s'atura en n= 2097153. 
+
+b)
+El resultat és lleugerament diferent, això és donat a que la precisió del format float fa que certs arrodoniments es produeixin a cada pas. Al fer-se els càlculs en ordres diferents, les aproximacions son diferents i aixó fa que varïi el resultat.
+
+2.
+
+a) La diferència entre el format double i el format float és d'aproximadament 10⁻1. Sabent que el format float té molta menys precisió que el format double, té sentit que el desfassament sigui tan gran.
+
+b) El programa estima un error de 3.3e+03 pel tipus float i de 1.87e-07 pel tipus double. En qualsevol dels casos veiem que l'error augmenta uns 10 ordres respecte l'inicial. Deixant un error completament aberrant, que fa que el càlcul sigui inútil. En el cas del double, però, arribem a un error molt més tolerable i que fa que el resultat sigui bastant fiable (almenys en les primeres xiferes decimals).
+
+c) Tot i que els resultats s'aproximen molt, comencen a diferir aproximadament en l'ordre de 10⁻⁶. En el cas de la funció f es fan dos productes i una resta, i en el cas de la funció g, es fan tres productes i una resta, pel que podem determinar que el resultat de la funció f és més fiable que no pas la del g, ja que s'efectuen menys operacions i per tant l'error d'aquestes no afecta tant al resultat.
+
+3.
+a)Es nota que al punt x=0 hi ha un error. A la funció original, el 0 no forma part del domini, i per tant al aproximar-s'hi, es generen certs problemes, deixant un gràfic bastant abrupte. Sembla que el dibuix sigui incorrecte, és a dir, que s'hi estiguin generant errors.
+
+b) L'algorisme que he triat és fer el desenvolupament per sèries de Taylor de la funció, que fins l'ordre 4 és:
+T(x)=-1/3 +x²/30 -x⁴/840
+
+Utilitzant la fòrmula de l'error de Lagrange (E(x)= f*(c) (x-a)^(n-1)/(n+1)!  [f* és la n+1-éssima derivada de f i c és un punt entre a i x]) es pot trobar una cota de l'error. Utilitzant c=a=0 arribem a que l'error és d'aproximadament 3.53e-22, per tant menor al de 10^-15.
+
+c) Com veiem abans, aquells canvis dràstics que tenia la funció no apareixen quan s'utilitzen les aproximacions per sèries de Taylor. Aixó és degut a que no cal treballar amb divisions amb denominador molt proper a 0, la qual cosa sol generar errors notables. Al aproximar-ho queda una funció molt més estable.
